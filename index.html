@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ============================================
+    【編集ポイント】SEO用の説明文（検索エンジンに表示されます）
+  ============================================ -->
+  <meta name="description" content="居酒屋 笑べ（WARABE）は茨城県古河市駒羽根にある地域密着型の居酒屋。ただいま、と言いたくなる、落ち着いて飲める居酒屋です。営業時間 18:00〜24:00 / 定休日 日・月">
+  <title>居酒屋 笑べ WARABE｜茨城県古河市駒羽根の居酒屋</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+    ヘッダー（全ページ共通）
+    【編集ポイント】電話番号・ナビゲーションを変える場合はここ
+    ※全ページの同じ箇所も合わせて変更してください
+  ============================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- 店名ロゴ -->
+      <a href="index.html" class="site-logo" aria-label="居酒屋 笑べ トップページへ">
+        <span class="site-logo-name">居酒屋 笑べ</span>
+        <span class="site-logo-en">WARABE</span>
+      </a>
+
+      <!-- PC用ナビゲーション -->
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li><a href="index.html"   class="nav-link current">トップ</a></li>
+          <li><a href="menu.html"    class="nav-link">メニュー</a></li>
+          <li><a href="shop.html"    class="nav-link">店舗情報</a></li>
+          <li><a href="access.html"  class="nav-link">アクセス</a></li>
+          <li><a href="contact.html" class="nav-link">予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- PC用電話ボタン（スマホでは非表示） -->
+      <a href="tel:09078076860" class="header-tel">TEL 090-7807-6860</a>
+
+      <!-- スマホ用ハンバーガーボタン -->
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- スマホ用ドロップダウンナビゲーション -->
+  <nav class="mobile-nav" aria-label="スマホ用ナビゲーション">
+    <ul>
+      <li><a href="index.html"   class="mobile-nav-link current">トップページ</a></li>
+      <li><a href="menu.html"    class="mobile-nav-link">メニュー</a></li>
+      <li><a href="shop.html"    class="mobile-nav-link">店舗情報</a></li>
+      <li><a href="access.html"  class="mobile-nav-link">アクセス</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">予約・お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+
+    <!-- ============================================
+      1. ヒーロー（メインビジュアル）
+      【編集ポイント】
+        - 写真は style.css の .hero の background: url('images/exterior.jpg') を変更
+        - 店名は以下の h1 タグを編集
+        - キャッチコピーは .hero-catch を編集
+    ============================================ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-label">IBARAKI / KOGA / WARABE</p>
+
+        <!-- 店名 -->
+        <h1 class="hero-title">
+          居酒屋 笑べ
+          <span class="hero-title-en">WARABE</span>
+        </h1>
+
+        <!-- キャッチコピー -->
+        <p class="hero-catch">ただいま、と言いたくなる居酒屋。</p>
+
+        <!-- CTAボタン群 -->
+        <div class="hero-btns">
+          <a href="tel:09078076860" class="btn btn--hero">電話で予約する</a>
+          <a href="menu.html"       class="btn btn--hero">メニューを見る</a>
+          <a href="access.html"     class="btn btn--hero">アクセスを見る</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+      2. 紹介文
+      【編集ポイント】お店の紹介文を変更する場合はここを編集してください
+    ============================================ -->
+    <section class="section">
+      <div class="container">
+        <span class="section-en">ABOUT</span>
+        <h2 class="section-title">笑べについて</h2>
+
+        <div class="intro-wrap">
+          <!-- ↓ ここの文章を自由に編集してください -->
+           <p>
+料理とお酒をゆっくり楽しめて、
+また来ようと思える店。
+</p>
+
+<p>
+居酒屋 笑べは、
+茨城県古河市駒羽根にある
+地域密着の居酒屋です。
+</p>
+
+<p>
+仕事帰りの一杯、
+友人との楽しい時間、
+ご家族でのお食事など、
+気軽に立ち寄れるお店です。
+</p>
+
+<p>
+カウンター席とテーブル席があり、
+お一人様からご友人、ご家族まで
+ゆっくりお過ごしいただけます。
+</p>
+
+<p>
+お近くにお越しの際は、ぜひお気軽にお立ち寄りください。
+</p>  <!-- ↑ 紹介文ここまで -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+      3. 店内・料理写真ギャラリー
+      【編集ポイント】
+        - images フォルダの画像ファイルを差し替えると写真が更新されます
+        - 写真を追加する場合は <div class="gallery-item"> ブロックをコピーして追加
+        - 削除する場合は <div class="gallery-item"> ブロックごと削除
+        - 写真がない場合も「準備中」表示でレイアウトは崩れません
+    ============================================ -->
+    <section class="section section--alt">
+      <div class="container">
+        <span class="section-en">GALLERY</span>
+        <h2 class="section-title">店内・お料理</h2>
+
+        <div class="gallery-grid">
+
+          <!-- 写真1：店内（interior.jpg を差し替えてください） -->
+          <div class="gallery-item">
+            <div class="img-wrap">
+              <img src="images/interior.jpg" alt="店内の様子" loading="lazy">
+              <div class="img-placeholder">
+                <div class="img-placeholder-icon">&#9632;</div>
+                <p>店内写真<br>準備中</p>
+              </div>
+            </div>
+            <p class="gallery-caption">落ち着いた店内</p>
+          </div>
+
+          <!-- 写真2：料理（food1.jpg を差し替えてください） -->
+          <div class="gallery-item">
+            <div class="img-wrap">
+              <img src="images/food1.jpg" alt="料理の一例" loading="lazy">
+              <div class="img-placeholder">
+                <div class="img-placeholder-icon">&#9632;</div>
+                <p>料理写真<br>準備中</p>
+              </div>
+            </div>
+            <p class="gallery-caption">自慢の一品料理</p>
+          </div>
+
+          <!-- 写真3：料理（food2.jpg を差し替えてください） -->
+          <div class="gallery-item">
+            <div class="img-wrap">
+              <img src="images/food2.jpg" alt="料理の一例" loading="lazy">
+              <div class="img-placeholder">
+                <div class="img-placeholder-icon">&#9632;</div>
+                <p>料理写真<br>準備中</p>
+              </div>
+            </div>
+            <p class="gallery-caption">旬の食材を使った料理</p>
+          </div>
+
+          <!-- 写真4：黒板メニュー（blackboard.jpg を差し替えてください） -->
+          <div class="gallery-item">
+            <div class="img-wrap">
+              <img src="images/blackboard.jpg" alt="黒板メニュー" loading="lazy">
+              <div class="img-placeholder">
+                <div class="img-placeholder-icon">&#9632;</div>
+                <p>黒板メニュー写真<br>準備中</p>
+              </div>
+            </div>
+            <p class="gallery-caption">その日のおすすめ黒板メニュー</p>
+          </div>
+
+          <!--
+            【写真を追加する場合】
+            以下をコピーして使ってください：
+
+            <div class="gallery-item">
+              <div class="img-wrap">
+                <img src="images/ファイル名.jpg" alt="説明文" loading="lazy">
+                <div class="img-placeholder">
+                  <div class="img-placeholder-icon">&#9632;</div>
+                  <p>準備中</p>
+                </div>
+              </div>
+              <p class="gallery-caption">キャプション</p>
+            </div>
+          -->
+
+        </div><!-- /gallery-grid -->
+      </div>
+    </section>
+
+
+    <!-- ============================================
+      4. 店舗情報の概要
+      【編集ポイント】営業時間・定休日などを変更する場合はここ
+    ============================================ -->
+    <section class="section">
+      <div class="container">
+        <span class="section-en">INFO</span>
+        <h2 class="section-title">店舗情報</h2>
+
+        <div class="overview-grid">
+          <div class="overview-card">
+            <p class="overview-card-label">住所</p>
+            <p class="overview-card-value">茨城県古河市<br>駒羽根870-1</p>
+          </div>
+          <div class="overview-card">
+            <p class="overview-card-label">電話番号</p>
+            <p class="overview-card-value">090-7807-6860</p>
+          </div>
+          <div class="overview-card">
+            <p class="overview-card-label">営業時間</p>
+            <p class="overview-card-value">18:00〜24:00</p>
+          </div>
+          <div class="overview-card">
+            <p class="overview-card-label">定休日</p>
+            <p class="overview-card-value">日曜日・月曜日</p>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <a href="shop.html"   class="btn btn--outline">詳しい店舗情報を見る</a>
+          <a href="access.html" class="btn btn--outline">アクセスを見る</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+      5. 予約導線
+    ============================================ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-en">RESERVATION</span>
+          <h2 class="section-title">ご予約について</h2>
+          <p class="section-lead">ご予約はお電話にて承っております。<br>お気軽にお電話ください。</p>
+
+          <!-- 電話番号（タップで発信） -->
+          <p class="cta-tel-number">
+            <a href="tel:09078076860">090-7807-6860</a>
+          </p>
+          <p class="cta-note">
+            営業時間 18:00〜24:00 &nbsp;／&nbsp; 定休日 日曜日・月曜日
+          </p>
+
+          <a href="contact.html" class="btn btn--primary">予約・お問い合わせページへ</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+    フッター（全ページ共通）
+    【編集ポイント】店舗情報を変える場合はここを編集
+    ※全ページの同じ箇所も合わせて変更してください
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- 店名・店舗情報 -->
+        <div>
+          <p class="footer-logo">
+            居酒屋 笑べ
+            <span class="footer-logo-en">WARABE</span>
+          </p>
+          <!-- 【編集ポイント】店舗情報の変更はここ -->
+          <ul class="footer-info">
+            <li>
+              <span class="footer-info-label">住所</span>
+              <span>茨城県古河市駒羽根870-1</span>
+            </li>
+            <li>
+              <span class="footer-info-label">電話</span>
+              <span>
+                <a href="tel:09078076860" style="color: rgba(253,250,245,0.8);">090-7807-6860</a>
+              </span>
+            </li>
+            <li>
+              <span class="footer-info-label">営業時間</span>
+              <span>18:00〜24:00</span>
+            </li>
+            <li>
+              <span class="footer-info-label">定休日</span>
+              <span>日曜日・月曜日</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- フッターナビゲーション -->
+        <div>
+          <p class="footer-nav-title">NAVIGATION</p>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="menu.html">メニュー</a></li>
+            <li><a href="shop.html">店舗情報</a></li>
+            <li><a href="access.html">アクセス</a></li>
+            <li><a href="contact.html">予約・お問い合わせ</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-inner -->
+      <p class="footer-copy">&copy; 居酒屋 笑べ WARABE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+    スマホ用固定電話ボタン（画面下部に常時表示）
+    【編集ポイント】電話番号を変更する場合は href="tel:数字" も変更
+  ============================================ -->
+  <div class="phone-bar">
+    <a href="tel:09078076860">電話で予約する &nbsp; 090-7807-6860</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1289 @@
+/* ============================================
+   居酒屋 笑べ WARABE - 共通スタイルシート
+   style.css
+   ============================================
+
+   目次：
+    1. CSS変数（色・フォント・余白） ← ここを変えると全体に反映
+    2. リセット・ベーススタイル
+    3. 共通レイアウト（container, section）
+    4. セクションタイトル
+    5. ヘッダー
+    6. PC用ナビゲーション
+    7. ハンバーガーメニュー（スマホ）
+    8. フッター
+    9. スマホ用固定電話ボタン
+   10. ページヒーロー（各ページ上部）
+   11. ボタン
+   12. 画像ラッパー・ギャラリー
+   13. トップページ専用スタイル
+   14. メニューページ専用スタイル
+   15. 店舗情報ページ専用スタイル
+   16. アクセスページ専用スタイル
+   17. 予約ページ専用スタイル
+   18. ユーティリティ
+   ============================================ */
+
+
+/* ============================================
+   1. CSS変数
+   ここの値を変えるとサイト全体の色・フォントが変わります
+   ============================================ */
+:root {
+  /* ---- 色 ---- */
+  --bg-primary: #f5f0e8;
+  /* メイン背景：和紙ベージュ */
+  --bg-secondary: #ebe1cf;
+  /* サブ背景：やや濃いベージュ */
+  --bg-dark: #2e1c0c;
+  /* ダーク背景（フッターなど） */
+  --color-main: #5c3d1e;
+  /* メインカラー：濃い木目ブラウン */
+  --color-sub: #8b5e3c;
+  /* サブカラー：やや明るい茶色 */
+  --color-accent: #c9a84c;
+  /* アクセント：控えめな金色 */
+  --color-text: #2d1f0e;
+  /* 本文テキスト：濃茶 */
+  --color-muted: #7a5c3e;
+  /* サブテキスト：落ち着いた茶色 */
+  --color-white: #fdfaf5;
+  /* オフホワイト */
+  --color-border: #d4c4a8;
+  /* ボーダー：薄い茶色 */
+
+  /* ---- フォント ---- */
+  --font-serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'MS Mincho', Georgia, serif;
+  --font-sans: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'YuGothic', 'MS Gothic', sans-serif;
+
+  /* ---- フォントサイズ ---- */
+  --fs-xs: 0.75rem;
+  /* 12px */
+  --fs-sm: 0.875rem;
+  /* 14px */
+  --fs-base: 1rem;
+  /* 16px */
+  --fs-md: 1.125rem;
+  /* 18px */
+  --fs-lg: 1.25rem;
+  /* 20px */
+  --fs-xl: 1.5rem;
+  /* 24px */
+  --fs-2xl: 2rem;
+  /* 32px */
+  --fs-3xl: 2.5rem;
+  /* 40px */
+
+  /* ---- 余白 ---- */
+  --sp-xs: 0.5rem;
+  /*  8px */
+  --sp-sm: 1rem;
+  /* 16px */
+  --sp-md: 1.5rem;
+  /* 24px */
+  --sp-lg: 2rem;
+  /* 32px */
+  --sp-xl: 3rem;
+  /* 48px */
+  --sp-2xl: 5rem;
+  /* 80px */
+
+  /* ---- その他 ---- */
+  --radius: 4px;
+  --radius-md: 8px;
+  --shadow: 0 2px 12px rgba(92, 61, 30, 0.12);
+  --shadow-lg: 0 4px 24px rgba(92, 61, 30, 0.20);
+  --transition: 0.3s ease;
+  --container: 1100px;
+  --header-h: 70px;
+}
+
+
+/* ============================================
+   2. リセット・ベーススタイル
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.85;
+  color: var(--color-text);
+  background-color: var(--bg-primary);
+  /* スマホ固定バー分の余白 */
+  padding-bottom: 60px;
+}
+
+a {
+  color: var(--color-main);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-sub);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* PCでは固定バー余白を解除 */
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+
+/* ============================================
+   3. 共通レイアウト
+   ============================================ */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-sm);
+}
+
+/* セクション共通 */
+.section {
+  padding: 90px 0;
+}
+
+.section--alt {
+  background-color: var(--bg-secondary);
+}
+
+.intro-wrap p {
+  margin-bottom: 18px;
+}
+
+/* ============================================
+   4. セクションタイトル
+   ============================================ */
+/* 英語サブタイトル（タイトルの上に表示） */
+.section-en {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: var(--sp-xs);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  color: var(--color-main);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-md);
+}
+
+/* タイトル下の金色ライン */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin: var(--sp-sm) auto 0;
+}
+
+.section-lead {
+  text-align: center;
+  font-size: var(--fs-md);
+  color: var(--color-muted);
+  line-height: 2;
+  margin-bottom: var(--sp-xl);
+}
+
+
+/* ============================================
+   5. ヘッダー
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: box-shadow var(--transition);
+}
+
+.site-header.scrolled {
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-sm);
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-sm);
+}
+
+/* ロゴ・店名 */
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.site-logo-name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  color: var(--color-main);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.site-logo-en {
+  font-size: var(--fs-xs);
+  color: var(--color-sub);
+  letter-spacing: 0.22em;
+}
+
+/* ヘッダー内電話ボタン（PC用） */
+.header-tel {
+  display: none;
+  background-color: var(--color-main);
+  color: var(--color-white) !important;
+  padding: 0.5em 1.2em;
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background-color var(--transition);
+}
+
+.header-tel:hover {
+  background-color: var(--color-sub);
+  color: var(--color-white) !important;
+}
+
+@media (min-width: 769px) {
+  .header-tel {
+    display: inline-block;
+  }
+}
+
+
+/* ============================================
+   6. PC用ナビゲーション
+   ============================================ */
+.site-nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--sp-md);
+  align-items: center;
+}
+
+.nav-link {
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+  padding: var(--sp-xs) 0;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+/* ホバー下線 */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.current::after {
+  width: 100%;
+}
+
+.nav-link.current {
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+@media (min-width: 769px) {
+  .site-nav {
+    display: block;
+  }
+}
+
+
+/* ============================================
+   7. ハンバーガーメニュー（スマホ）
+   ============================================ */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--sp-xs);
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-main);
+  transition: all var(--transition);
+}
+
+/* × アイコン（開いているとき） */
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* スマホドロップダウンメニュー */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 99;
+  box-shadow: var(--shadow);
+}
+
+.mobile-nav.is-open {
+  display: block;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--sp-sm) var(--sp-lg);
+  color: var(--color-text);
+  font-size: var(--fs-md);
+  border-bottom: 1px solid var(--color-border);
+  letter-spacing: 0.04em;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.current {
+  background-color: var(--bg-secondary);
+  color: var(--color-main);
+}
+
+/* PC非表示 */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+
+/* ============================================
+   8. フッター
+   ============================================ */
+.site-footer {
+  background-color: var(--bg-dark);
+  color: var(--color-white);
+  padding: var(--sp-xl) 0 var(--sp-lg);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+  margin-bottom: var(--sp-lg);
+}
+
+@media (min-width: 769px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  color: var(--color-white);
+  margin-bottom: var(--sp-sm);
+  letter-spacing: 0.1em;
+}
+
+.footer-logo-en {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.22em;
+  margin-bottom: var(--sp-sm);
+}
+
+.footer-info {
+  padding: 0;
+}
+
+.footer-info li {
+  display: flex;
+  gap: var(--sp-sm);
+  margin-bottom: 0.4em;
+  font-size: var(--fs-sm);
+  color: rgba(253, 250, 245, 0.8);
+  line-height: 1.6;
+}
+
+.footer-info-label {
+  color: var(--color-accent);
+  white-space: nowrap;
+  min-width: 5em;
+}
+
+.footer-nav-title {
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  margin-bottom: var(--sp-sm);
+}
+
+.footer-nav-list li {
+  margin-bottom: 0.4em;
+}
+
+.footer-nav-list a {
+  color: rgba(253, 250, 245, 0.75);
+  font-size: var(--fs-sm);
+}
+
+.footer-nav-list a:hover {
+  color: var(--color-accent);
+}
+
+.footer-copy {
+  border-top: 1px solid rgba(212, 196, 168, 0.25);
+  padding-top: var(--sp-md);
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: rgba(253, 250, 245, 0.4);
+}
+
+
+/* ============================================
+   9. スマホ用固定電話ボタン（画面下に常時表示）
+   ============================================ */
+.phone-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-main);
+  padding: 0.9rem var(--sp-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-bar a {
+  color: var(--color-white);
+  font-size: var(--fs-md);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.phone-bar a:hover {
+  color: var(--color-white);
+  opacity: 0.88;
+}
+
+/* PCでは非表示 */
+@media (min-width: 769px) {
+  .phone-bar {
+    display: none;
+  }
+}
+
+
+/* ============================================
+  10. ページヒーロー（各ページ上部の帯）
+   ============================================ */
+.page-hero {
+  background-color: var(--bg-secondary);
+  padding: var(--sp-xl) 0;
+  text-align: center;
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 和紙っぽいパターン装飾 */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 12px,
+      rgba(92, 61, 30, 0.025) 12px,
+      rgba(92, 61, 30, 0.025) 13px);
+  pointer-events: none;
+}
+
+.page-hero-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-3xl);
+  color: var(--color-main);
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.page-hero-en {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-top: var(--sp-xs);
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .page-hero-title {
+    font-size: var(--fs-2xl);
+  }
+}
+
+
+/* ============================================
+  11. ボタン
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 0.8em 2em;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-size: var(--fs-base);
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-align: center;
+  transition: all var(--transition);
+  cursor: pointer;
+  min-width: 160px;
+}
+
+/* 塗りつぶしボタン */
+.btn--primary {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  border-color: var(--color-main);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-sub);
+  border-color: var(--color-sub);
+  color: var(--color-white);
+}
+
+/* アウトラインボタン */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-main);
+  border-color: var(--color-main);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+
+/* 電話ボタン（ページ内） */
+.btn--tel {
+  background-color: var(--color-sub);
+  color: var(--color-white);
+  border-color: var(--color-sub);
+  font-size: var(--fs-lg);
+  padding: 0.8em 2.5em;
+}
+
+.btn--tel:hover {
+  background-color: var(--color-main);
+  border-color: var(--color-main);
+  color: var(--color-white);
+}
+
+/* ヒーロー用半透明ボタン */
+.btn--hero {
+  background-color: rgba(253, 250, 245, 0.15);
+  border-color: rgba(253, 250, 245, 0.65);
+  color: var(--color-white);
+  backdrop-filter: blur(4px);
+}
+
+.btn--hero:hover {
+  background-color: var(--color-white);
+  color: var(--color-main);
+  border-color: var(--color-white);
+}
+
+/* ボタングループ */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+  justify-content: center;
+  margin-top: var(--sp-xl);
+}
+
+
+/* ============================================
+  12. 画像ラッパー・ギャラリー
+   ============================================ */
+
+/*
+  .img-wrap は画像コンテナです。
+  - 画像が未設定・読み込み失敗のときはプレースホルダーが表示されます
+  - 画像が読み込まれると上に重なってプレースホルダーが隠れます
+*/
+.img-wrap {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 画像本体（position:absolute で全面に広がる） */
+.img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* 画像が存在しない・読み込み中のプレースホルダー */
+.img-placeholder {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+  padding: var(--sp-lg);
+  line-height: 1.8;
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.img-placeholder-icon {
+  font-size: 2.5rem;
+  color: var(--color-border);
+  margin-bottom: var(--sp-xs);
+}
+
+/* 画像ロード成功時は img が前面を覆う → プレースホルダーは自動的に隠れる */
+
+/* ギャラリーグリッド */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-sm);
+}
+
+@media (min-width: 769px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item .img-wrap {
+  aspect-ratio: 4 / 3;
+  min-height: unset;
+  border-radius: var(--radius-md);
+}
+
+.gallery-item .img-wrap:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-caption {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  text-align: center;
+  margin-top: var(--sp-xs);
+}
+
+
+/* ============================================
+  13. トップページ専用スタイル
+   ============================================ */
+
+/* --- ヒーロー（メインビジュアル） --- */
+.hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  /*
+    【編集ポイント】images/exterior.jpg を差し替えると背景写真が変わります
+    画像がない場合は濃い茶色の背景が表示されます
+  */
+  background:
+    linear-gradient(to bottom, rgba(30, 18, 6, 0.52) 0%, rgba(30, 18, 6, 0.65) 100%),
+    url('images/exterior.jpg') center / cover no-repeat;
+  background-color: var(--color-main);
+  /* 画像なしのフォールバック */
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--sp-xl) var(--sp-sm);
+  color: var(--color-white);
+}
+
+.hero-label {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.4em;
+  color: var(--color-accent);
+  margin-bottom: var(--sp-sm);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--color-white);
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  margin-bottom: var(--sp-sm);
+}
+
+.hero-title-en {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  letter-spacing: 0.42em;
+  margin-top: var(--sp-xs);
+}
+
+.hero-catch {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: rgba(253, 250, 245, 0.92);
+  margin-bottom: var(--sp-xl);
+  line-height: 1.9;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+  justify-content: center;
+}
+
+/* --- 紹介文 --- */
+.intro-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.intro-wrap p {
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  line-height: 2.3;
+  margin-bottom: var(--sp-md);
+  text-align: center;
+}
+
+/* --- 店舗概要カード（トップ） --- */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.overview-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-md);
+  text-align: center;
+}
+
+.overview-card-label {
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--sp-xs);
+}
+
+.overview-card-value {
+  font-size: var(--fs-md);
+  color: var(--color-main);
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* --- 予約CTAボックス（トップ） --- */
+.cta-box {
+  text-align: center;
+}
+
+.cta-tel-number {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: bold;
+  color: var(--color-main);
+  letter-spacing: 0.08em;
+  margin: var(--sp-md) 0 var(--sp-sm);
+}
+
+.cta-tel-number a {
+  color: var(--color-main);
+}
+
+.cta-tel-number a:hover {
+  color: var(--color-sub);
+}
+
+.cta-note {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--sp-lg);
+}
+
+
+/* ============================================
+  14. メニューページ専用スタイル
+   ============================================ */
+
+/* メモ書き（注意事項など） */
+.menu-note {
+  background-color: var(--bg-secondary);
+  border-left: 3px solid var(--color-accent);
+  padding: var(--sp-sm) var(--sp-md);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--sp-xl);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.8;
+}
+
+/* カテゴリセクション */
+.menu-section {
+  margin-bottom: var(--sp-2xl);
+}
+
+.menu-cat-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  color: var(--color-main);
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: var(--sp-xs);
+  margin-bottom: var(--sp-md);
+  letter-spacing: 0.12em;
+}
+
+.menu-cat-en {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  margin-left: var(--sp-sm);
+}
+
+/* メニューリスト */
+.menu-list {
+  padding: 0;
+}
+
+/*
+  【メニュー編集のポイント】
+  <li class="menu-item"> を1行コピーして追加できます
+  削除は <li> 行ごと消してください
+*/
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.55em 0;
+  border-bottom: 1px dotted var(--color-border);
+  gap: var(--sp-sm);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-name {
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  flex: 1;
+}
+
+.menu-price {
+  font-size: var(--fs-base);
+  color: var(--color-sub);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* ドリンクページのグループラベル（ボトル酒など） */
+.menu-group-label {
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: var(--sp-sm) 0 var(--sp-xs);
+  display: block;
+}
+
+
+/* ============================================
+  15. 店舗情報ページ専用スタイル
+   ============================================ */
+
+/* 店舗情報テーブル */
+.shop-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--sp-xl);
+}
+
+.shop-table th,
+.shop-table td {
+  padding: var(--sp-sm) var(--sp-md);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+  font-size: var(--fs-base);
+  line-height: 1.8;
+}
+
+.shop-table th {
+  width: 35%;
+  background-color: var(--bg-secondary);
+  color: var(--color-accent);
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.06em;
+}
+
+.shop-table td {
+  color: var(--color-text);
+}
+
+@media (max-width: 480px) {
+  .shop-table th {
+    width: 38%;
+    font-size: var(--fs-xs);
+    padding: var(--sp-xs) var(--sp-sm);
+  }
+
+  .shop-table td {
+    font-size: var(--fs-sm);
+    padding: var(--sp-xs) var(--sp-sm);
+  }
+}
+
+/* 設備カードグリッド */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-xl);
+}
+
+@media (min-width: 600px) {
+  .facility-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.facility-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-md);
+  text-align: center;
+}
+
+.facility-icon {
+  font-size: 2rem;
+  margin-bottom: var(--sp-xs);
+  line-height: 1;
+}
+
+.facility-name {
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.facility-note {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+
+/* 特記事項ボックス */
+.special-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-lg) var(--sp-xl);
+}
+
+.special-box-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--color-main);
+  margin-bottom: var(--sp-sm);
+  padding-bottom: var(--sp-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.special-box p {
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  line-height: 2;
+}
+
+
+/* ============================================
+  16. アクセスページ専用スタイル
+   ============================================ */
+.address-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-xl);
+  text-align: center;
+  margin-bottom: var(--sp-xl);
+}
+
+.address-label {
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  margin-bottom: var(--sp-xs);
+}
+
+.address-text {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  color: var(--color-main);
+  line-height: 1.6;
+}
+
+/* Googleマップ埋め込みエリア */
+.map-wrap {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 400px;
+  margin-bottom: var(--sp-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 400px;
+  display: block;
+  border: none;
+}
+
+.map-placeholder {
+  text-align: center;
+  color: var(--color-muted);
+  padding: var(--sp-xl);
+  line-height: 2;
+}
+
+.map-placeholder p {
+  margin-bottom: var(--sp-sm);
+}
+
+.access-text {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: var(--fs-md);
+  line-height: 2.3;
+  color: var(--color-text);
+  text-align: center;
+}
+
+
+/* ============================================
+  17. 予約ページ専用スタイル
+   ============================================ */
+.contact-box {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-sm);
+}
+
+.contact-message {
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  line-height: 2.3;
+  margin-bottom: var(--sp-xl);
+}
+
+.tel-display {
+  margin: var(--sp-xl) 0;
+}
+
+.tel-display-label {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--sp-xs);
+}
+
+.tel-display-number {
+  font-size: clamp(2.2rem, 9vw, 3.2rem);
+  font-weight: bold;
+  color: var(--color-main);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-bottom: var(--sp-md);
+}
+
+.tel-display-number a {
+  color: var(--color-main);
+}
+
+.tel-display-number a:hover {
+  color: var(--color-sub);
+}
+
+.hours-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-lg);
+  max-width: 460px;
+  margin: var(--sp-xl) auto 0;
+  text-align: left;
+}
+
+.hours-box-title {
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--sp-sm);
+  text-align: center;
+}
+
+.hours-item {
+  display: flex;
+  gap: var(--sp-md);
+  padding: 0.5em 0;
+  border-bottom: 1px dotted var(--color-border);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+}
+
+.hours-item:last-child {
+  border-bottom: none;
+}
+
+.hours-label {
+  color: var(--color-muted);
+  min-width: 5.5em;
+}
+
+
+/* ============================================
+  18. ユーティリティ
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.mt-sm {
+  margin-top: var(--sp-sm);
+}
+
+.mt-md {
+  margin-top: var(--sp-md);
+}
+
+.mt-lg {
+  margin-top: var(--sp-lg);
+}
+
+.mt-xl {
+  margin-top: var(--sp-xl);
+}
+
+.mb-xl {
+  margin-bottom: var(--sp-xl);
+}
