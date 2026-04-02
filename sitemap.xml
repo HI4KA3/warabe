@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://warabe-9h44.vercel.app/</loc>
+    <loc>https://warabe.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://warabe-9h44.vercel.app/menu</loc>
+    <loc>https://warabe.vercel.app/menu.html</loc>
   </url>
   <url>
-    <loc>https://warabe-9h44.vercel.app/access</loc>
+    <loc>https://warabe.vercel.app/shop.html</loc>
   </url>
   <url>
-    <loc>https://warabe-9h44.vercel.app/reserve</loc>
+    <loc>https://warabe.vercel.app/access.html</loc>
+  </url>
+  <url>
+    <loc>https://warabe.vercel.app/contact.html</loc>
   </url>
 </urlset>
