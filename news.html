@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="居酒屋 笑べ（WARABE）からのお知らせ。連休の営業案内・価格改定など最新情報をご確認ください。">
+  <meta name="google-site-verification" content="OCAfTmg5p0ywiF3w4mmZDgo4nFrXkQGxKW2Iz_oY5t8" />
+  <title>お知らせ｜居酒屋 笑べ WARABE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="居酒屋 笑べ トップページへ">
+        <span class="site-logo-name">居酒屋 笑べ</span>
+        <span class="site-logo-en">WARABE</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li><a href="index.html"   class="nav-link">トップ</a></li>
+          <li><a href="menu.html"    class="nav-link">メニュー</a></li>
+          <li><a href="shop.html"    class="nav-link">店舗情報</a></li>
+          <li><a href="access.html"  class="nav-link">アクセス</a></li>
+          <li><a href="news.html"    class="nav-link current">お知らせ</a></li>
+          <li><a href="contact.html" class="nav-link">予約・お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <a href="tel:09078076860" class="header-tel">TEL 090-7807-6860</a>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- スマホナビ -->
+  <nav class="mobile-nav" aria-label="スマホ用ナビゲーション">
+    <ul>
+      <li><a href="index.html"   class="mobile-nav-link">トップページ</a></li>
+      <li><a href="menu.html"    class="mobile-nav-link">メニュー</a></li>
+      <li><a href="shop.html"    class="mobile-nav-link">店舗情報</a></li>
+      <li><a href="access.html"  class="mobile-nav-link">アクセス</a></li>
+      <li><a href="news.html"    class="mobile-nav-link current">お知らせ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">予約・お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+
+    <!-- ページタイトル帯 -->
+    <div class="page-hero">
+      <h1 class="page-hero-title">お知らせ</h1>
+      <span class="page-hero-en">NEWS</span>
+    </div>
+
+
+    <section class="section">
+      <div class="container">
+
+        <!-- ============================================
+          お知らせ一覧
+          【編集ポイント】
+            ・新しいお知らせを追加するときは <li class="news-item"> ブロックをコピーして
+              リストの先頭（一番上）に追加してください
+            ・削除するときは <li class="news-item"> ～ </li> ごと削除
+            ・タグの種類：
+                news-tag--holiday  … 連休・臨時休業のお知らせ（赤系）
+                news-tag--price    … 価格改定（青系）
+                news-tag--info     … その他お知らせ（茶系）
+        ============================================ -->
+
+        <ul class="news-list">
+
+          <!-- ============================================
+            お知らせ例1：連休のお知らせ
+            【使い方】連休・臨時休業のお知らせはこのブロックをコピーして使ってください
+          ============================================ -->
+          <li class="news-item">
+            <div class="news-meta">
+              <time class="news-date" datetime="2026-04-25">2026.04.25</time>
+              <span class="news-tag news-tag--holiday">連休のお知らせ</span>
+            </div>
+            <p class="news-title">ゴールデンウィーク中の営業について（予定）</p>
+            <div class="news-body">
+              <p>
+                ゴールデンウィーク期間中の営業についてお知らせいたします。<br>
+                ※ 以下は現時点での予定です。変更になる場合がございます。
+              </p>
+              <table class="news-table">
+                <tbody>
+                  <tr>
+                    <th>4月29日（火・祝）</th>
+                    <td>通常営業</td>
+                  </tr>
+                  <tr>
+                    <th>4月30日（水）</th>
+                    <td>通常営業</td>
+                  </tr>
+                  <tr>
+                    <th>5月1日（木）</th>
+                    <td>通常営業</td>
+                  </tr>
+                  <tr>
+                    <th>5月2日（金）</th>
+                    <td>通常営業</td>
+                  </tr>
+                  <tr>
+                    <th>5月3日（土）</th>
+                    <td class="news-closed">臨時休業</td>
+                  </tr>
+                  <tr>
+                    <th>5月4日（日）</th>
+                    <td class="news-closed">定休日</td>
+                  </tr>
+                  <tr>
+                    <th>5月5日（月）</th>
+                    <td class="news-closed">定休日</td>
+                  </tr>
+                  <tr>
+                    <th>5月6日（火）</th>
+                    <td>通常営業</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                ご予約はお電話にて承っております。<br>
+                <a href="tel:09078076860" class="news-link">090-7807-6860</a>
+              </p>
+            </div>
+          </li>
+
+          <!--
+            【新しいお知らせを追加するときはここにコピーして使ってください】
+
+            <li class="news-item">
+              <div class="news-meta">
+                <time class="news-date" datetime="YYYY-MM-DD">YYYY.MM.DD</time>
+                <span class="news-tag news-tag--info">お知らせ</span>
+              </div>
+              <p class="news-title">タイトルを入力</p>
+              <div class="news-body">
+                <p>本文を入力してください。</p>
+              </div>
+            </li>
+          -->
+
+        </ul><!-- /news-list -->
+
+
+        <!-- ボタン -->
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn--primary">ご予約はこちら</a>
+          <a href="index.html"   class="btn btn--outline">トップページへ</a>
+        </div>
+
+      </div><!-- /container -->
+    </section>
+
+  </main>
+
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-logo">
+            居酒屋 笑べ
+            <span class="footer-logo-en">WARABE</span>
+          </p>
+          <ul class="footer-info">
+            <li><span class="footer-info-label">住所</span><span>茨城県古河市駒羽根870-1</span></li>
+            <li><span class="footer-info-label">電話</span><span><a href="tel:09078076860" style="color:rgba(253,250,245,0.8);">090-7807-6860</a></span></li>
+            <li><span class="footer-info-label">営業時間</span><span>18:00〜24:00</span></li>
+            <li><span class="footer-info-label">定休日</span><span>日曜日・月曜日</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-nav-title">NAVIGATION</p>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="menu.html">メニュー</a></li>
+            <li><a href="shop.html">店舗情報</a></li>
+            <li><a href="access.html">アクセス</a></li>
+            <li><a href="news.html">お知らせ</a></li>
+            <li><a href="contact.html">予約・お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; 居酒屋 笑べ WARABE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- スマホ固定電話ボタン -->
+  <div class="phone-bar">
+    <a href="tel:09078076860">電話で予約する &nbsp; 090-7807-6860</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

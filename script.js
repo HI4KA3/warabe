@@ -99,4 +99,62 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+
+  // ============================================
+  // 4. ギャラリーのライトボックス（クリックで拡大）
+  // ============================================
+
+  // オーバーレイ要素を動的に生成
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-label', '画像を拡大表示中');
+  overlay.innerHTML = '<button class="lightbox-close" aria-label="閉じる">&times;</button><img src="" alt="">';
+  document.body.appendChild(overlay);
+
+  var lightboxImg = overlay.querySelector('img');
+  var closeBtn = overlay.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  // ギャラリーの各画像にクリックイベントを設定
+  document.querySelectorAll('.gallery-item .img-wrap img').forEach(function (img) {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function () {
+      if (this.naturalWidth > 0) {
+        openLightbox(this.src, this.alt);
+      }
+    });
+  });
+
+  // オーバーレイ背景クリックで閉じる
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) {
+      closeLightbox();
+    }
+  });
+
+  // 閉じるボタン
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Escキーで閉じる
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+
 }); // DOMContentLoaded ここまで
